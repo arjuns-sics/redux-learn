@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import CartItem from '../components/CartItem'
 
 export default function CartPage() {
   return (
@@ -12,6 +13,10 @@ export default function CartPage() {
               <h5>Cart Items</h5>
             </div>
             <div className="card-body">
+              {/* <CartItem />
+              <CartItem />
+              <CartItem /> */}
+              
               <div className="text-center py-5">
                 <i className="bi bi-cart-x display-1 text-muted"></i>
                 <h4 className="mt-3">Your cart is empty</h4>
