@@ -5,9 +5,11 @@ import UseContextDemo from './pages/UseContextDemo/UseContextDemo'
 import ProductsPage from './pages/ProductsPage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import CartPage from './pages/CartPage'
-
+import {Provider} from "react-redux"
+import store from "./store"
 function App() {
   return (
+    <Provider store={store}>
     <div className="min-vh-100 bg-light">
       <BrowserRouter>
       <Routes>
@@ -20,6 +22,7 @@ function App() {
       </Routes>
       </BrowserRouter>
     </div>
+    </Provider>
   )
 }
 

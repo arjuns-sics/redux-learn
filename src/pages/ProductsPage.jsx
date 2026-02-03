@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../features/cartSlice'
 
 export default function ProductsPage() {
   const [products, setProducts] = useState([])
-
+  const dispatch = useDispatch()
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
       .then(response => {
@@ -15,6 +17,10 @@ export default function ProductsPage() {
         console.error('Error fetching products:', error)
       })
   }, [])
+
+  const handleAdd = (product)=>{
+    dispatch(addItem(product))
+  }
 
   return (
     <>
@@ -44,7 +50,7 @@ export default function ProductsPage() {
                   >
                     View
                   </Link>
-                  <button className="btn btn-primary">
+                  <button onClick={()=>handleAdd(product)} className="btn btn-primary">
                     Add to Cart
                   </button>
                 </div>

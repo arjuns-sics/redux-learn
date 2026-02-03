@@ -1,21 +1,21 @@
-export default function CartItem() {
+export default function CartItem({item}) {
   return (
     <div className="card mb-3">
       <div className="card-body">
         <div className="row align-items-center">
           <div className="col-md-2">
             <img
-              src="https://via.placeholder.com/100x100"
+              src={item.image}
               className="img-fluid rounded"
               alt="Product"
             />
           </div>
           <div className="col-md-4">
-            <h6 className="mb-0">Product Name</h6>
-            <small className="text-muted">Category</small>
+            <h6 className="mb-0">{item.title}</h6>
+            <small className="text-muted">{item.category}</small>
           </div>
           <div className="col-md-2">
-            <span className="fw-bold">$99.99</span>
+            <span className="fw-bold">${item.price}</span>
           </div>
           <div className="col-md-2">
             <div className="input-group input-group-sm">

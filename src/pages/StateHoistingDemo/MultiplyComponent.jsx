@@ -1,16 +1,16 @@
-function ChildComponent({count,setCount}) {
+function MultiplyComponent({count,setCount}) {
   const change = ()=>{
-    setCount(count+1)
+    setCount(count*2)
   }
   return (
     <div className="card p-3 mb-3">
       <h5>Child Component</h5>
       <p>Count received from parent: {count}</p>
       <button onClick={change} className="btn btn-primary">
-        Increment Count
+        Mutiply Count
       </button>
     </div>
   )
 }
 
-export default ChildComponent
+export default MultiplyComponent

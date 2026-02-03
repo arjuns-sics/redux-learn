@@ -1,6 +1,8 @@
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router'
 
 export default function Navbar() {
+  const count = useSelector(state=>state.cart.count)
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
@@ -29,7 +31,7 @@ export default function Navbar() {
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/cart">
-                <i className="bi bi-cart3"></i> Cart (0)
+                <i className="bi bi-cart3"></i> Cart ({count})
               </Link>
             </li>
           </ul>
